@@ -9,7 +9,7 @@ Para correr esta aplicación es necesario arrancar, en orden, primero el servido
 ```sh
  cd backend-ml
  yarn install
- node app.js
+ node index.js
 ```
 
 2. Iniciar el cliente.
