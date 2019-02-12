@@ -1,18 +1,21 @@
 # ml-frontend-challenge
-ml-frontend-challenge
-Ejercicio frontend Mercado Libre.
-Iniciar la aplicación.
+
+## Iniciar la aplicación.
 
 Para correr esta aplicación es necesario arrancar, en orden, primero el servidor y luego el cliente.
 
-    Iniciar el servidor.
+1. Iniciar el servidor.
 
- cd api
+```sh
+ cd backend-ml
  yarn install
  node app.js
+```
 
-    Iniciar el cliente.
+2. Iniciar el cliente.
 
- cd client
+```sh
+ cd frontend-ml
  yarn install
  yarn start
+```
