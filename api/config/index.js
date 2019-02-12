@@ -3,8 +3,8 @@ var config = {
     name: 'Guido',
     lastname: 'Mourelle'
   },
+  limit: '4',
   API_BASE_URL: 'https://api.mercadolibre.com',
-  itemsLimit: 4,
   port: 8081
 };
 

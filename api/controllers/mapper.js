@@ -1,13 +1,6 @@
-const parsePrice = (amount, currency) => {
-  let arrayAmount = amount.toString().split('.');
-  return {
-    currency: currency,
-    amount: arrayAmount[0].replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.'),
-    decimals: arrayAmount[1] === undefined ? '00' : arrayAmount[1]
-  };
-};
+const { parsePrice } = require('../utils');
 
-function getCategories(results) {
+const getCategories = results => {
   const { filters } = results;
   if (!filters) {
     return;
@@ -18,9 +11,9 @@ function getCategories(results) {
     value.path_from_root.map(category => category.name)
   );
   return arrayCategories;
-}
+};
 
-function mapItem(item) {
+const mapItem = item => {
   return {
     id: item.id,
     title: item.title,
@@ -29,16 +22,9 @@ function mapItem(item) {
     condition: item.condition,
     free_shipping: item.shipping.free_shipping
   };
-}
-
-function getItems(results, limit) {
-  const initialItems = results.results.slice(0, limit); // Get first n elements from array.
-  const mappedItems = initialItems.map(i => mapItem(i));
-  return mappedItems;
-}
+};
 
 module.exports = {
   getCategories: getCategories,
-  mapItem: mapItem,
-  getItems: getItems
+  mapItem: mapItem
 };
