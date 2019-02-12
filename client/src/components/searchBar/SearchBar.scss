@@ -1,0 +1,47 @@
+.search-bar-container {
+  display: flex;
+  //flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffe600;
+  color: #333333;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  .logo-ml {
+    margin-right: 10px;
+    height: 19px;
+    vertical-align: middle;
+  }
+
+  .search-bar-form {
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+  }
+
+  .search-input {
+    height: 21px;
+    width: 100%;
+    //vertical-align: middle;
+    //margin-right: -3px;
+    font-size: 14px;
+  }
+
+  .search-button {
+    //vertical-align: middle;
+    //   margin-top: 1.5px;
+    //   padding-top: 4px;
+    height: 25px;
+    width: 46px;
+    background-color: white;
+  }
+
+  .icon-search {
+    background: url(../../assets/ic_Search.png) no-repeat;
+  }
+  .search-logo {
+    height: 19px;
+  }
+}
