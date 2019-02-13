@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import qs from 'qs';
 import { getItems } from '../../services';
-import Home from '../home';
-import { BreadCrumb } from '../breadCrumb';
+import { Layout, BreadCrumb } from '../../components';
 import Product from './Product';
 
 const ProductList = ({ location, history }) => {
@@ -24,11 +23,16 @@ const ProductList = ({ location, history }) => {
     getItems(params.q).then(response => handleFetch(response));
   }, [params.q]);
 
-  if (status === 'pending') return <div>Cargando...</div>;
+  if (status === 'pending')
+    return (
+      <Layout>
+        <div>Cargando...</div>
+      </Layout>
+    );
 
   return (
     <div>
-      <Home history={history}>
+      <Layout history={history}>
         <Helmet>
           <meta charSet="utf-8" />
           <title>{params.q}</title>
@@ -45,7 +49,7 @@ const ProductList = ({ location, history }) => {
         {results.items.map(item => (
           <Product key={item.id} item={item} />
         ))}
-      </Home>
+      </Layout>
     </div>
   );
 };

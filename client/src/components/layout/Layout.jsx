@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
-import SearchBar from '../searchBar';
+import { SearchBar } from '../../components';
 
-const Home = ({ children, history }) => (
+const Layout = ({ children, history }) => (
   <Fragment>
     <Helmet>
       <meta charSet="utf-8" />
@@ -13,4 +13,4 @@ const Home = ({ children, history }) => (
   </Fragment>
 );
 
-export default Home;
+export default Layout;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { getItem } from '../../services';
-import Home from '../home';
+import Layout from '../layout';
 import { BreadCrumb } from '../breadCrumb';
 
 import qs from 'qs';
@@ -9,7 +9,6 @@ import qs from 'qs';
 const ProductDetails = ({ location, history, match }) => {
   const [status, setStatus] = useState('pending');
   const [results, setResults] = useState([]);
-  const params = qs.parse(location.search, { ignoreQueryPrefix: true });
   const { id } = match.params;
 
   const handleFetch = newResults => {
@@ -22,10 +21,15 @@ const ProductDetails = ({ location, history, match }) => {
     getItem(id).then(response => handleFetch(response));
   }, []);
 
-  if (status === 'pending') return <div>Cargando...</div>;
+  if (status === 'pending')
+    return (
+      <Layout>
+        <div>Cargando...</div>
+      </Layout>
+    );
 
   return (
-    <Home>
+    <Layout>
       <div>
         <Helmet>
           <title>{results.item.title}</title>
@@ -65,7 +69,7 @@ const ProductDetails = ({ location, history, match }) => {
           <p>{results.item.description}</p>
         </div>
       </div>
-    </Home>
+    </Layout>
   );
 };
 

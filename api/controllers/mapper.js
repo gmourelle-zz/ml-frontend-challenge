@@ -20,7 +20,8 @@ const mapItem = item => {
     price: parsePrice(item.price, item.currency_id),
     picture: item.thumbnail,
     condition: item.condition,
-    free_shipping: item.shipping.free_shipping
+    free_shipping: item.shipping.free_shipping,
+    localidad: item.address.state_name
   };
 };
 
