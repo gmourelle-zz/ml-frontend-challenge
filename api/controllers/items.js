@@ -11,20 +11,35 @@ function getItemsFromAPI(req, res) {
   request.get(urlItems, (error, response, body) => {
     if (!error && response.statusCode === 200) {
       const parsedResults = JSON.parse(body);
-      const categories = getCategories(parsedResults);
-      const items = parsedResults.results.map(item => mapItem(item));
-      const response = {
-        author: config.author,
-        categories: categories[0],
-        mainCategory: categories[0].id,
-        items: items
-      };
 
-      res.status(200).json(response);
+      if (parsedResults.results.length > 0) {
+        const categories = getCategories(parsedResults);
+        const items = parsedResults.results.map(item => mapItem(item));
+        const response = {
+          author: config.author,
+          categories: categories[0],
+          mainCategory: categories[0].id,
+          items: items
+        };
+        res.status(200).json({
+          author: config.author,
+          categories: categories[0],
+          mainCategory: categories[0].id,
+          items: items
+        });
+      }
+      // res
+      //   .status(404)
+      //   .json('No hay publicaciones que coincidan con tu búsqueda.');
+      else
+        res.status(404).json({
+          error: true,
+          message: 'No hay publicaciones que coincidan con tu búsqueda.'
+        });
     } else {
       // Error
       console.error(error);
-      res.status(404).json('Not found');
+      res.status(404).json('not found');
     }
   });
 }

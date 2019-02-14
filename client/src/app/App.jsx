@@ -3,7 +3,6 @@ import { Switch, Route } from 'react-router-dom';
 import { Layout, ProductList, ProductDetails } from '../components';
 
 import './App.scss';
-
 const App = () => (
   <Switch>
     <Route exact path="/" component={Layout} />
