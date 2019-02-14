@@ -3,23 +3,38 @@ import App from '../App';
 import { shallow } from 'enzyme';
 
 describe('<App />', () => {
-  let app;
+  let wrapper;
 
   beforeEach(() => {
-    app = shallow(<App />);
+    wrapper = shallow(<App />);
   });
 
-  it('should render App general container with children', () => {
-    const generalContainer = app.find('div.App');
-    expect(generalContainer.exists()).toBe(true);
-    expect(generalContainer.find('h1').exists()).toBe(true);
-    expect(generalContainer.find('div.App__container').exists()).toBe(true);
-  });
+  describe('render', () => {
+    describe('Router', () => {
+      it('should render Switch component', () => {
+        const switchWrapper = wrapper.find('Switch');
+        expect(switchWrapper.exists()).toBe(true);
+      });
 
-  it('should render Football Player Finder title', () => {
-    const title = app.find('h1');
-    expect(title.exists()).toBe(true);
-    expect(title.text()).toBe('Football Player Finder');
-    //console.log(app.debug());
+      it('should render Route component', () => {
+        const routeWrapper = wrapper.find('Route');
+        expect(routeWrapper.exists()).toBe(true);
+      });
+
+      it('should contain Route for /', () => {
+        const routeWrapper = wrapper.find({ path: '/' });
+        expect(routeWrapper.exists()).toBe(true);
+      });
+
+      it('should contain Route for item', () => {
+        const routeWrapper = wrapper.find({ path: '/items' });
+        expect(routeWrapper.exists()).toBe(true);
+      });
+
+      it('should contain Route for item/id', () => {
+        const routeWrapper = wrapper.find({ path: '/items/:id' });
+        expect(routeWrapper.exists()).toBe(true);
+      });
+    });
   });
 });
