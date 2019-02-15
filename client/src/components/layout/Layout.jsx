@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 import { SearchBar } from '../../components';
 
-import './Layout.scss';
 const Layout = ({ children, history }) => (
   <Fragment>
     <Helmet>

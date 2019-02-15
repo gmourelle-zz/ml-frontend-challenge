@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router';
 import logoML from '../../assets/Logo_ML.png';
 import logoSearch from '../../assets/ic_Search.png';
 import './SearchBar.scss';
@@ -30,4 +31,4 @@ const SearchBar = ({ history }) => {
   );
 };
 
-export default SearchBar;
+export default withRouter(SearchBar);

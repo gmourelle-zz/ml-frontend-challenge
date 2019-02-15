@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { Layout, ProductList, ProductDetails } from '../components';
+import { Helmet } from 'react-helmet';
+import { ProductList, ProductDetails, SearchBar } from '../components';
 
 import './App.scss';
+
 const App = () => (
-  <Switch>
-    <Route exact path="/" component={Layout} />
-    <Route exact path="/items" component={ProductList} />
-    <Route exact path="/items/:id" component={ProductDetails} />
-  </Switch>
+  <Fragment>
+    <Helmet>
+      <meta charSet="utf-8" />
+      <title>Mercado Libre</title>
+    </Helmet>
+    <SearchBar />
+    <Switch>
+      <Route exact path="/items" component={ProductList} />
+      <Route exact path="/items/:id" component={ProductDetails} />
+    </Switch>
+  </Fragment>
 );
 
 export default App;

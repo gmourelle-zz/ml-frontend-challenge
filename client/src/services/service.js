@@ -8,8 +8,6 @@ export const getItems = query =>
 
 export const getItem = id =>
   fetch(`${url}${id}`)
-    .then(data => {
-      data.json();
-    })
+    .then(data => data.json())
     .then(items => items)
     .catch(error => error);

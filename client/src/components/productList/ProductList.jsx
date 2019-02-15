@@ -28,7 +28,7 @@ const ProductList = ({ location, history }) => {
     );
 
   return (
-    <Layout history={history}>
+    <div>
       <Helmet>
         <meta charSet="utf-8" />
         <title>{params.q}</title>
@@ -47,7 +47,7 @@ const ProductList = ({ location, history }) => {
       {results.categories && <BreadCrumb items={results.categories} />}
       {results.items &&
         results.items.map(item => <Product key={item.id} item={item} />)}
-    </Layout>
+    </div>
   );
 };
 

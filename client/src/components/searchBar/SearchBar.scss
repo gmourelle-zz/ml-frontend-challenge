@@ -1,12 +1,14 @@
 .search-bar-container {
   display: flex;
-  //flex-direction: row;
   align-items: center;
   justify-content: center;
+  width: 100vw;
+  padding: 5px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
   background-color: #ffe600;
   color: #333333;
-  padding-top: 5px;
-  padding-bottom: 5px;
 
   .logo-ml {
     margin-right: 10px;
@@ -22,25 +24,27 @@
   }
 
   .search-input {
-    height: 21px;
+    padding: 5px;
     width: 100%;
-    //vertical-align: middle;
-    //margin-right: -3px;
+    border: none;
     font-size: 14px;
+    border-radius: 3px 0 0 3px;
   }
 
   .search-button {
-    //vertical-align: middle;
-    //   margin-top: 1.5px;
-    //   padding-top: 4px;
-    height: 25px;
-    width: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 0 3px 3px 0;
+    border: none;
     background-color: white;
   }
 
   .icon-search {
     background: url(../../assets/ic_Search.png) no-repeat;
   }
+
   .search-logo {
     height: 19px;
   }
