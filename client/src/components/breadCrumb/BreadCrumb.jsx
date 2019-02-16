@@ -4,9 +4,11 @@ import './BreadCrumb.scss';
 
 const Breadcrumb = ({ items }) => (
   <div className="bread-crumb-container">
-    {items.map((c, index) => (
-      <Crumb key={c} crumb={c} isLast={index === items.length - 1} />
-    ))}
+    {items ? (
+      items.map(c => <Crumb key={c} crumb={c} />)
+    ) : (
+      <span className="no-category">No existe categoria para resultado</span>
+    )}
   </div>
 );
 

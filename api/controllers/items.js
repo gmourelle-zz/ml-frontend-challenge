@@ -17,21 +17,12 @@ function getItemsFromAPI(req, res) {
         const items = parsedResults.results.map(item => mapItem(item));
         const response = {
           author: config.author,
-          categories: categories[0],
-          mainCategory: categories[0].id,
+          categories: categories ? categories[0] : undefined,
+          mainCategory: categories ? categories[0].id : undefined,
           items: items
         };
-        res.status(200).json({
-          author: config.author,
-          categories: categories[0],
-          mainCategory: categories[0].id,
-          items: items
-        });
-      }
-      // res
-      //   .status(404)
-      //   .json('No hay publicaciones que coincidan con tu búsqueda.');
-      else
+        res.status(200).json(response);
+      } else
         res.status(404).json({
           error: true,
           message: 'No hay publicaciones que coincidan con tu búsqueda.'

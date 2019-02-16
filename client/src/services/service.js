@@ -1,4 +1,4 @@
-const url = process.env.REACT_APP_DB_API;
+const url = process.env.REACT_APP_API;
 
 export const getItems = query =>
   fetch(`${url}?q=${query}`)

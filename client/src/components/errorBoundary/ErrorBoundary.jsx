@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
+import './ErrorBoundary.scss';
 export class ErrorBoundary extends React.Component {
   // TODO: correctly test this on library update: https://github.com/airbnb/enzyme/issues/1553
   componentDidCatch(error, info) {
@@ -10,7 +12,7 @@ export class ErrorBoundary extends React.Component {
     const { error, children, message } = this.props;
 
     if (error) {
-      return <div className="error-message">{message}</div>;
+      return <div className="error-message-container">{message}</div>;
     }
 
     return children;

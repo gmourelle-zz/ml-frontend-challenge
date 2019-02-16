@@ -1,15 +1,33 @@
 .bread-crumb-container {
-  margin-top: 16px;
-  margin-bottom: 16px;
-  margin-left: 10%;
-}
+  margin: 0 auto;
+  max-width: 1200px;
+  background-color: #eeeeee;
+  padding-bottom: 1rem;
 
-.crumb {
-  color: #999999;
-  font-size: 14px;
-}
+  .crumb {
+    color: #999999;
+    font-size: 14px;
 
-.crumb.last {
-  color: #666666;
-  font-weight: bold;
+    &:last-child {
+      color: #666666;
+      font-weight: bold;
+      &:after {
+        content: '';
+      }
+    }
+
+    &:after {
+      content: ' \003e';
+    }
+  }
+
+  .crumb.last {
+    color: #666666;
+    font-weight: bold;
+  }
+
+  .no-category {
+    color: #999999;
+    font-size: 14px;
+  }
 }
