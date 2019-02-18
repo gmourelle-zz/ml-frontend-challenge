@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import logoML from '../../assets/Logo_ML.png';
@@ -9,13 +9,14 @@ const SearchBar = ({ history }) => {
   const [inputPlaceholder, setStatus] = useState('Nunca dejes de buscar');
   const handleSubmit = e => {
     e.preventDefault();
+    const { value } = e.target.query;
 
-    if (e.target.query.value === '') {
+    if (value === '') {
       setStatus('Debes ingresar datos para la búsqueda');
       return;
     }
 
-    history.push(`/items?q=${e.target.query.value}`);
+    history.push(`/items?q=${value}`);
   };
 
   return (

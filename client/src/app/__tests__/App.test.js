@@ -10,6 +10,30 @@ describe('<App />', () => {
   });
 
   describe('render', () => {
+    describe('Helmet', () => {
+      let helmetWrapper;
+      beforeEach(() => {
+        helmetWrapper = wrapper.find('HelmetWrapper');
+      });
+
+      it('should render Helmet component', () => {
+        //const helmetWrapper = wrapper.find('HelmetWrapper');
+        console.log(wrapper.debug());
+        expect(helmetWrapper.exists()).toBe(true);
+      });
+
+      it('should render a title tag', () => {
+        const titleWrapper = helmetWrapper.find('title');
+        expect(titleWrapper.exists()).toBe(true);
+      });
+    });
+
+    describe('SearchBar', () => {
+      it('should render <withRouter(SearchBar) /> component', () => {
+        const searchBarWrapper = wrapper.find('withRouter(SearchBar)');
+        expect(searchBarWrapper.exists()).toBe(true);
+      });
+    });
     describe('Router', () => {
       it('should render Switch component', () => {
         const switchWrapper = wrapper.find('Switch');
@@ -18,11 +42,6 @@ describe('<App />', () => {
 
       it('should render Route component', () => {
         const routeWrapper = wrapper.find('Route');
-        expect(routeWrapper.exists()).toBe(true);
-      });
-
-      it('should contain Route for /', () => {
-        const routeWrapper = wrapper.find({ path: '/' });
         expect(routeWrapper.exists()).toBe(true);
       });
 

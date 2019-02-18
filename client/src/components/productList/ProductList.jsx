@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import qs from 'qs';
-import { getItems } from '../../services';
-import { Layout, BreadCrumb, ErrorBoundary, Spinner } from '../../components';
+import { BreadCrumb, ErrorBoundary, Spinner } from '../../components';
 import Product from './Product';
+import { getItems } from '../../services';
 
 import './ProductList.scss';
 
-const ProductList = ({ location, history }) => {
+const ProductList = ({ location }) => {
   const [status, setStatus] = useState('pending');
   const [results, setResults] = useState([]);
   const params = qs.parse(location.search, { ignoreQueryPrefix: true });
