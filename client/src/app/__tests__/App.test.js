@@ -16,10 +16,9 @@ describe('<App />', () => {
         helmetWrapper = wrapper.find('HelmetWrapper');
       });
 
-      it('should render Helmet component', () => {
-        //const helmetWrapper = wrapper.find('HelmetWrapper');
-        console.log(wrapper.debug());
-        expect(helmetWrapper.exists()).toBe(true);
+      it('should render a meta tag', () => {
+        const metaWrapper = helmetWrapper.find('meta');
+        expect(metaWrapper.exists()).toBe(true);
       });
 
       it('should render a title tag', () => {

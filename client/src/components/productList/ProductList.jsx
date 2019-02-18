@@ -41,9 +41,9 @@ const ProductList = ({ location }) => {
           />
           <meta name="og:url" content="http://mercadolibre.com.ar" />
         </Helmet>
-        {error && <ErrorBoundary error={error} message={message} />}
-
-        {items && items.map(item => <Product key={item.id} item={item} />)}
+        <ErrorBoundary error={error} message={message}>
+          {items && items.map(item => <Product key={item.id} item={item} />)}
+        </ErrorBoundary>
       </div>
     </div>
   );
