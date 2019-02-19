@@ -7,6 +7,7 @@ import './SearchBar.scss';
 
 const SearchBar = ({ history }) => {
   const [inputPlaceholder, setStatus] = useState('Nunca dejes de buscar');
+
   const handleSubmit = e => {
     e.preventDefault();
     const { value } = e.target.query;

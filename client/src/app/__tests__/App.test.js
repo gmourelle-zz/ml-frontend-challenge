@@ -1,5 +1,6 @@
 import React from 'react';
 import App from '../App';
+import { ProductList, ProductDetails } from '../../components';
 import { shallow } from 'enzyme';
 
 describe('<App />', () => {
@@ -45,13 +46,17 @@ describe('<App />', () => {
       });
 
       it('should contain Route for item', () => {
-        const routeWrapper = wrapper.find({ path: '/items' });
+        const routeWrapper = wrapper.find('Route');
         expect(routeWrapper.exists()).toBe(true);
+        expect(routeWrapper.at(0).prop('path')).toEqual('/items');
+        expect(routeWrapper.at(0).prop('component')).toEqual(ProductList);
       });
 
-      it('should contain Route for item/id', () => {
-        const routeWrapper = wrapper.find({ path: '/items/:id' });
+      it('should contain Route for item/:id', () => {
+        const routeWrapper = wrapper.find('Route');
         expect(routeWrapper.exists()).toBe(true);
+        expect(routeWrapper.at(1).prop('path')).toEqual('/items/:id');
+        expect(routeWrapper.at(1).prop('component')).toEqual(ProductDetails);
       });
     });
   });
