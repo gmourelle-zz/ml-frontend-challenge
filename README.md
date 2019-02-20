@@ -20,7 +20,9 @@ Para correr esta aplicación es necesario arrancar, en orden, primero el servido
  yarn start
 ```
 
-3. Correr tests sobre el cliente, mostrando la cobertura de código.
+3. Crear archivo .env.local con el contenido del archivo .env.test
+
+4. Correr tests sobre el cliente, mostrando la cobertura de código.
 
 ```sh
  yarn test --coverage
