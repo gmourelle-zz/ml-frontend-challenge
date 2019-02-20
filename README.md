@@ -19,3 +19,9 @@ Para correr esta aplicación es necesario arrancar, en orden, primero el servido
  yarn install
  yarn start
 ```
+
+3. Correr tests sobre el cliente, mostrando la cobertura de código.
+
+```sh
+ yarn test --coverage
+```
