@@ -13,7 +13,7 @@ const formatResponse = res => {
   };
   return response;
 };
-const getItemsFromAPI = (req, res) => {
+const getItems = (req, res) => {
   const searchValue = encodeURIComponent(req.query.q);
   try {
     fetch(getUrlItems(searchValue))
@@ -34,4 +34,4 @@ const getItemsFromAPI = (req, res) => {
   }
 };
 
-module.exports = getItemsFromAPI;
+module.exports = getItems;

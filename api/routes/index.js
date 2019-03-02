@@ -1,10 +1,10 @@
 const express = require("express");
-const getItemDetailsFromAPI = require("../base/itemDetails");
-const getItemsFromAPI = require("../base/items");
+const getItemDetails = require("../controllers/itemDetailsController");
+const getItems = require("../controllers/itemsController");
 
 const router = express.Router();
 
-router.get("/", getItemsFromAPI);
-router.get("/:id", getItemDetailsFromAPI);
+router.get("/", getItems);
+router.get("/:id", getItemDetails);
 
 module.exports = router;

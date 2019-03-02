@@ -11,7 +11,7 @@ const getDescriptionItem = async id => {
   try {
     const response = await fetch(getUrlDescription(id));
     const json = await response.json();
-    const data = await json.plain_text;
+    const data = json.plain_text;
     return data;
   } catch (error) {
     throw new Error(error);
@@ -21,7 +21,7 @@ const getCategoryNames = async category_id => {
   try {
     const response = await fetch(getUrlCategories(category_id));
     const json = await response.json();
-    const data = await json.path_from_root.map(category => category.name);
+    const data = json.path_from_root.map(category => category.name);
     return data;
   } catch (error) {
     throw new Error(error);
@@ -62,7 +62,7 @@ const formatResponseItemDetail = async id => {
     categories: categories
   };
 };
-const getItemDetailsFromAPI = async (req, res) => {
+const getItemDetails = async (req, res) => {
   const id = decodeURIComponent(req.params.id);
 
   try {
@@ -73,4 +73,4 @@ const getItemDetailsFromAPI = async (req, res) => {
   }
 };
 
-module.exports = getItemDetailsFromAPI;
+module.exports = getItemDetails;
