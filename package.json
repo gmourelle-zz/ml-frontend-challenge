@@ -1,0 +1,23 @@
+{
+  "name": "meli-frontend-challenge",
+  "version": "1.0.0",
+  "description": "Para correr esta aplicación es necesario arrancar, en orden, primero el servidor y luego el cliente.",
+  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "api",
+    "client"
+  ],
+  "scripts": {
+    "client": "cd client && npm start",
+    "api": "cd api && yarn start",
+    "start": "start yarn run api & yarn run client"
+  },
+  "repository": "git+https://github.com/gmourelle/ml-frontend-challenge.git",
+  "author": "gmourelle <guido.mourelle@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gmourelle/ml-frontend-challenge/issues"
+  },
+  "homepage": "https://github.com/gmourelle/ml-frontend-challenge#readme"
+}

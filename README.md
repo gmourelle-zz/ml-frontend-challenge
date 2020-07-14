@@ -7,7 +7,7 @@ Para correr esta aplicación es necesario arrancar, en orden, primero el servido
 1. Iniciar el servidor.
 
 ```sh
- cd backend-ml
+ cd api
  yarn install
  node index.js
 ```
@@ -15,7 +15,7 @@ Para correr esta aplicación es necesario arrancar, en orden, primero el servido
 2. Iniciar el cliente.
 
 ```sh
- cd frontend-ml
+ cd client
  yarn install
  yarn start
 ```
